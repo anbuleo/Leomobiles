@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.flexItems{
+    flex: 1 1 calc(50% - 10px); /* 50% width with gap considered */
+    box-sizing: border-box;
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+    text-align: center;
+}
