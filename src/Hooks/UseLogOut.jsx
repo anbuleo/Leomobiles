@@ -16,7 +16,7 @@ function UseLogOut() {
             sessionStorage.clear()
            
 
-            navigate('/')
+            navigate('/signin')
             
             
         } catch (error) {
