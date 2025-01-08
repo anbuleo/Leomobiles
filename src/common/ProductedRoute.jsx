@@ -11,7 +11,7 @@ import AxiosService from "./AxiosService"
     // useEffect(()=>{},[token])
     const token = localStorage.getItem('token')
    
-  return token? children : <Navigate to='/' />
+  return token? children : <Navigate to='/signin' />
 }
 
 export default PrivateRoute

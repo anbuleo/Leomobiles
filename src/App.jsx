@@ -29,7 +29,8 @@ function App() {
     
     <Routes>
     <Route path="/signup" element={<SignUp/>} />
-    <Route path="/" element={<SignIn/>} />
+    <Route path="/signin" element={<SignIn/>} />
+      <Route path="/" element={<PrivateRoute><Home /><Footer /></PrivateRoute>} />
       <Route path="/home" element={<PrivateRoute><Home /><Footer /></PrivateRoute>} />
       <Route path="/billing" element={<PrivateRoute><Billing /></PrivateRoute>} />
       <Route path="/paypreview" element={<PrivateRoute><Paybiller /></PrivateRoute>} />
