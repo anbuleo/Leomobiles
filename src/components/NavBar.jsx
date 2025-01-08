@@ -143,7 +143,7 @@ function NavBar() {
       {cart.length >0 ? <>{cart.map((e,i)=>{ 
         return <tr key={i}>
           <td> {i+1}</td>
-          <td>{e.productName}</td>
+          <td>{e.productId.productName}</td>
           <td >1</td>
           <td>{e.productId.sellingPrice}</td>
           <td  className='text-red-700 text-2xl text-right' ><AiFillDelete onClick={()=>deleCart(e._id,e.productId?.sellingPrice)} /></td>
