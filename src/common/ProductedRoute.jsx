@@ -4,14 +4,15 @@ import { Outlet,Navigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import AxiosService from "./AxiosService"
 
- function PrivateRoute({children}) {
-  // let [token,setToken] = useState("")
 
+ function PrivateRoute({children}) {
+  
    
-    // useEffect(()=>{},[token])
-    const token = localStorage.getItem('token')
+    // useEffect(()=>{ setStatus(verifyTokenTime())},[statuss])
+    const token = sessionStorage.getItem('token')
+    // console.log(user,statuss)
    
-  return token? children : <Navigate to='/signin' />
+  return  token ? children : <Navigate to='/signin' />
 }
 
 export default PrivateRoute

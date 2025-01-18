@@ -13,7 +13,7 @@ export const cartSlice = createSlice(
             addAllinCart :(state,action)=>{
                 state.cart = action.payload;  
                 // console.log(action.payload)
-                let sum = state.cart.reduce((acc,cur)=>acc+ Number(cur.productId.sellingPrice) , 0)
+                let sum = state.cart?.reduce((acc,cur)=>acc+ Number(cur.productId.sellingPrice) , 0)
                 state.totalprice = sum
             },
             addOnetocart:(state,action)=>{
@@ -33,13 +33,18 @@ export const cartSlice = createSlice(
                 state.cart = filCart
                 
                 state.totalprice = state.totalprice - Number(action.payload.price)
+            },
+            deleteAlinCart :(state,action)=>{
+                state.cart = []
+                state.totalprice = 0
             }
+
 
 
         }
     }
 )
 
-export const {addAllinCart,totalPrice,removeIteminChart,addOnetocart} = cartSlice.actions
+export const {addAllinCart,totalPrice,removeIteminChart,addOnetocart,deleteAlinCart} = cartSlice.actions
 
 export default cartSlice.reducer

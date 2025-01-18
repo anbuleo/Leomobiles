@@ -19,6 +19,7 @@ import NavBar from "./components/NavBar"
 import SliderSection from "./components/SliderSection"
 import Footer from "./components/Footer"
 import Admin from "./pages/Admin"
+import OrderPage from "./pages/OrderPage"
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
       <Route path = '/viewproduct/:id' element = {<ViewProducts />} />
       <Route path = '/viewcart/:id' element = {<ViewCart />} />
       <Route path = '/listallproducttable' element = {<ListAllProductTable />} />
+      <Route path="/orderstatus/:id" element={<PrivateRoute><NavBar/><OrderPage/><Footer /></PrivateRoute>} />
 
     </Routes>
     </BrowserRouter>

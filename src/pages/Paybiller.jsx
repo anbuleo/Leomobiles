@@ -1,11 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import GooglePayButton from '@google-pay/button-react'
+import usePay from '../Hooks/UsePay'
 
 function Paybiller() {
 
     let {cart,totalprice} = useSelector(state=>state.cart)
     let {shippingAddress} = useSelector(state=>state.billing)
+    let {handlePay} = usePay()
+
 
 
   return <>
@@ -40,9 +43,9 @@ function Paybiller() {
                                 return <tr key={i}>
                                     <td>{i+1}</td>
                                     <td>{e.productId.productName}</td>
-                                    <td>{e.productId.price}</td>
+                                    <td>{e.productId.sellingPrice}</td>
                                     <td>{1}</td>
-                                    <td>{Number(e.productId.price)* 1}</td>
+                                    <td>{Number(e.productId.sellingPrice)* 1}</td>
                                 </tr>
                             })}
                         </tbody>
@@ -57,8 +60,9 @@ function Paybiller() {
                     </table>
                 </div>
                 <div className="flex justify-center mt-10 ">
-                   
+                   <button className="btn" onClick={(e)=>handlePay(e)}>pay</button>
                 </div>
+
         </div>
   
   

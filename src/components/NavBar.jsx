@@ -76,9 +76,9 @@ function NavBar() {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <li onClick={()=>navigate('/home')}>Homepage</li>
+        <li className='btn' onClick={()=>navigate('/home')}>Homepage</li>
         <li>{user&&user=='admin'?'Create Product':''}</li>
-        <li>About</li>
+        <li className='btn'>About</li>
       </ul>
     </div>
     <p className="btn btn-ghost text-xl "><GiCardPlay /><span className='text-yellow-200 text-2xl '>Leo</span><span className='text-blue-800 text-2xl'>Mobiles</span></p>
@@ -140,7 +140,7 @@ function NavBar() {
       
     </thead>
     <tbody>
-      {cart.length >0 ? <>{cart.map((e,i)=>{ 
+      {cart?.length >0 ? <>{cart.map((e,i)=>{ 
         return <tr key={i}>
           <td> {i+1}</td>
           <td>{e.productId.productName}</td>
@@ -182,7 +182,7 @@ function NavBar() {
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-5">
        
-        <li onClick={()=>handleAdminCheck()}>Admin</li>
+        <li className='btn' onClick={()=>handleAdminCheck()}>Admin</li>
         
         <li className='btn btn-outline btn-error' onClick={()=>logOut()}>{loading ?<span className="loading loading-dots loading-md"></span>:'sign out'}</li>
       </ul>

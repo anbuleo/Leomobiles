@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react'
 import {useNavigate} from 'react-router-dom'
 import ListAllProductTable from './ListAllProductTable';
+import ListAllSaleTable from '../components/subComponents/ListAllSaleTable';
 
 
 
@@ -49,6 +50,7 @@ function Admin() {
     {/* page */}
     <div className="bg-orange-200 w-5/6 ">
     {state.product && <ListAllProductTable />}
+    {state.sale && <ListAllSaleTable />}
     
     
     </div>

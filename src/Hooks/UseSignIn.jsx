@@ -29,7 +29,7 @@ function UseSignIn() {
               let userId = res.data?.rest._id
                 // console.log(res.data?.rest._id)
                 setMessage('login Success')
-                localStorage.setItem('token',res.data?.token)
+                sessionStorage.setItem('token',res.data?.token)
                 localStorage.setItem('user',JSON.stringify(res.data?.rest))
 
                 let mobileData = await AxiosService.get('/product/getallproduct')

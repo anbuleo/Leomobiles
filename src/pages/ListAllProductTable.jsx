@@ -14,7 +14,7 @@ function ListAllProductTable() {
     let navigate = useNavigate()
 
     let dispatch = useDispatch()
-    console.log(product)
+    // console.log(product)
 
     const handleDel = async(id)=>{
        try {
